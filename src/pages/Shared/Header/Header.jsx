@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,14 +13,15 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto">
             <Nav.Link href="#features">Khabar Ghor</Nav.Link>
-            <Nav.Link href="#pricing">Home</Nav.Link>
-            <Nav.Link href="#pricing">Blog</Nav.Link>
+            <Link to="/"><Nav.Link href="#pricing">Home</Nav.Link></Link>
+          <Link to="/blog"> <Nav.Link href="#pricing">Blog</Nav.Link></Link>
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Profile</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Link to="/login"><Nav.Link eventKey={2} href="#memes">
             <Button variant="secondary">Login</Button>
-            </Nav.Link>
+            </Nav.Link></Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
