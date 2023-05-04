@@ -1,24 +1,17 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Card } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+
 
 const Chefs = () => {
-    const [chefs ,setChefs]= useState([]);
-     
-    useEffect( ()=>{
-        fetch('http://localhost:5000/chefs')
-        .then(res => res.json())
-        .then(data => setChefs(data))
-        .catch(error=> console.error(error))
-    },[])
+    const {id,name} =useParams();
     return (
         <div>
-           <h3>All Chefs</h3>
-           {
-            chefs.map(chef => <p key={chef.id} >
-                <Link>{chef.name}</Link>
-            </p>)
-           }
+       <h2>All Recipes :{id}</h2>
+       
+         
         </div>
     );
 };
