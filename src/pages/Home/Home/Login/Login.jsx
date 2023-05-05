@@ -71,6 +71,7 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { FaGithub, FaGoogle} from "react-icons/fa";
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
@@ -126,6 +127,9 @@ const Login = () => {
 
                 </Form.Text>
             </Form>
+               <Button className='mb-2' variant="outline-primary"> <FaGoogle/> Login With Google</Button>
+ <br />
+  <Button variant="outline-secondary"> <FaGithub/> Login With Github</Button>
         </Container>
     );
 };
