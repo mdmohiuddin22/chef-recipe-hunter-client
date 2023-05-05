@@ -17,20 +17,24 @@ const ChepsInfo = () => {
         <div>
         <h3>All Chefs</h3>
     {
-     chefs.map(chef => <div key={chef.id} >
-         <Link to={`/chef/${chef.id}`}><h3>{chef.name}</h3>
+     chefs.map(chef => <div className='card ' key={chef.id} >
+         <Link to={`/chef/${chef.id}`}><h3 className='card-title'>{chef.name}</h3>
          </Link>
-         <h2>{chef.experience}</h2>
-         <h3>{chef.likes}</h3>
-         <h3>{chef.age}</h3>
-         <img src={chef.picture} alt="" />
-         <h3>{chef.num_recipes}</h3>
-         <button >{chef.view_recipes_button}</button>
-     </div>)
-     
-    }
+      <div  className='card'>
+      <img src={chef.picture} alt="" />
+      <h2>Experience: {chef.experience}</h2>
+         <h3>Likes: {chef.likes}</h3>
+         <h3> Age: {chef.age}</h3>
+        
+         <h3>Number Of Recipes: {chef.num_recipes}</h3>
+         <Button >View Details</Button>
+         
+      </div>
+       
+     </div>)}
  </div>
     );
+
 };
 
 export default ChepsInfo;
