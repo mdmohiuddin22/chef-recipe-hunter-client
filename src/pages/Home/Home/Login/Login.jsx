@@ -73,9 +73,6 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
-
-
-
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const navigate = useNavigate();
