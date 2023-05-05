@@ -10,6 +10,7 @@ const Chefs = () => {
     return (
         <div>
        <h2>All Recipes :{id}</h2>
+       <p>all name:{name}</p>
        
          
         </div>

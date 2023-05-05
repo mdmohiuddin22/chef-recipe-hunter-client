@@ -1,27 +1,39 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
+import React, { useState } from 'react';
 
-
-
-
-import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
+  const [chefsData ,setChefsData]= useState([]);
+  fetch('https://khabar-ghor-recipes-server-mdmohiuddin22.vercel.app/chefs')
+  .then((response)=>response.json())
+  .then((data)=> setChefsData(data));
+//  console.log(chefsData)
     return (
         <div>
-           <Card>
-      <Card.Header>Header</Card.Header>
-      <Card.Body>
-        <Card.Title>title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
-        </Card.Text>
-        
-      </Card.Body>
-      <Card.Footer className="text-muted">Footer</Card.Footer>
-    </Card> 
+
+{
+  
+}
+       {/* {chefsData[0]?.chef?.map((chef) => (
+          <div key={chef?.id} className="chef-card">
+            <h2>{chef?.name}</h2>
+            <p>{chef?.description}</p>
+            <ul>
+              {chef?.items?.map((item) => (
+                <li key={item?.id}>
+                  {item?.name} - ${item?.price}
+                </li>
+              ))}
+            </ul>
+            <p>Price: ${chef?.price}</p>
+            <p>Duration: {chef?.duration}</p>
+            <Link to={`/chefs/${chef?.id}`}>
+              <button>Details</button>
+            </Link>
+          </div>
+        ))}  */}
         </div>
     );
 };
