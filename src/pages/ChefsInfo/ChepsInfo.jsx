@@ -61,7 +61,7 @@ const ChepsInfo = () => {
 
     return (
         <div>
-            <h3>All Chefs</h3>
+            <h3 className='font-bold text-3xl mt-10 text-teal-400'>Chefs Section</h3>
             {loading ? (
                 <Spinner animation="border" role="status">
                     <span className="visually-hidden">Loading...</span>
@@ -69,16 +69,16 @@ const ChepsInfo = () => {
             ) : (
                 chefs.map(chef => (
                     <div className='card ' key={chef.id}>
-                        <Link to={`/chef/${chef.id}`}>
+                       
                             <h3 className='card-title'>{chef.name}</h3>
-                        </Link>
+                       
                         <div  className='card'>
                             <img className='img-fluid rounded mx-auto' src={chef.picture} alt="" />
                             <h2>Experience: {chef.experience}</h2>
                             <h3>Likes: {chef.likes}</h3>
                             <h3> Age: {chef.age}</h3>
                             <h3>Number Of Recipes: {chef.num_recipes}</h3>
-                            <Button>View Details</Button>
+                            <Link to={`/chef/${chef.id}`}>      <Button>View Details</Button>  </Link>
                         </div>
                     </div>
                 ))
