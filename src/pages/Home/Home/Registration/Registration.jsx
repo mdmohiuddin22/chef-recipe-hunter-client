@@ -85,12 +85,12 @@
 
 
 
-import { useContext } from "react";
+// import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../../../firebase/firebase.config";
-import { AuthContext } from "../AuthProvider/AuthProvider";
+// import { AuthContext } from "../AuthProvider/AuthProvider";
 
 
 const SignUp = () => {
@@ -115,13 +115,13 @@ const SignUp = () => {
     formState: { errors },
     watch,
   } = useForm();
-  const { createUser } = useContext(AuthContext);
+  // const { createUser } = useContext(AuthContext);
   const onSubmit = (data) => {
     console.log(data);
-    createUser(data.email, data.password).then((result) => {
-      const loggedUser = result.user;
-      console.log(loggedUser);
-    });
+    // createUser(data.email, data.password).then((result) => {
+    //   const loggedUser = result.user;
+    //   console.log(loggedUser);
+    // });
   };
 
   const password = watch("password"); 

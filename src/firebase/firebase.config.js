@@ -11,6 +11,7 @@ const firebaseConfig = {
   storageBucket: "khabar-ghor-recipes.appspot.com",
   messagingSenderId: "214081938193",
   appId: "1:214081938193:web:fff591e3471c46ef2022b0"
+
 };
 
 // Initialize Firebase
